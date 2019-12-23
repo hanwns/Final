@@ -16,19 +16,19 @@
       var orderstring = text.substring(orderstart + 1, orderend - 1);
 
       if(border_thickness.test(text) == true) {
-        outerbox.innerHTML = "<div style= \" width : 500px; height : 500 px;  border-width :"+ orderstring +";\" ></div>" ;
-                          }
+        outerbox.innerHTML = "<div style= \" width : 500px; height : 500 px; border-color : black; border-style : solid; border-width :"+ orderstring +";\" ></div>" ;
+      }
       else if (border_color.test(text) == true) {
-        outerbox.innerHTML = "<div style= \" width : 500px; height : 500 px; border-color :" + orderstring +";\" ></div>" ;
+        outerbox.innerHTML = "<div style= \" width : 500px; height : 500 px; border-width : 3px; border-style : solid; border-color :" + orderstring +";\" ></div>" ;
       }
       else if (background.test(text) == true) {
-        outerbox.innerHTML = "<div style= \" width : 500px; height : 500 px; background-color :" + orderstring +";\" ></div>" ;
+        outerbox.innerHTML = "<div style= \" width : 500px; height : 500 px; border-width : 3px; border-color : black; border-style : solid; background-color :" + orderstring +";\" ></div>" ;
       }
       else if (border_text.test(text) == true) {
-        outerbox.innerHTML = "<div style= \" width : 500px; height : 500 px; \"><h1>" + orderstring + "</h1></div>" ;
+        outerbox.innerHTML = "<div style= \" width : 500px; height : 500 px; border-width : 3px; border-color : black; border-style : solid;\"><h1>" + orderstring + "</h1></div>" ;
       }
       else if (border_style.test(text) == true) {
-        outerbox.innerHTML = "<div style= \" width : 500px; height : 500 px; border_style :" + orderstring +";\" ></div>" ;
+        outerbox.innerHTML = "<div style= \" width : 500px; height : 500 px; border-width : 3px; border-color : black; border-style :" + orderstring +";\" ></div>" ;
       }
     }
   </script>
