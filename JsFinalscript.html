@@ -10,22 +10,32 @@
       var background = "배경색";
       var box_text = "텍스트";
       var border_style = "테두리스타일";
+      var outerbox = document.getElementById('outer');
+      var orderstart = text.indexOf(" ");
+      var orderend = text.indexOf(".", orderstart + 1);
+      var orderstring = text.substring(orderstart + 1, orderend - 1);
 
       if(border_thickness.test(text) == true) {
-        var theBox = document.querySelector('body');
-        var border_thickness_start = text.indexOf(" ");
-        var border_thickness_end = text.indexOf(".", border_thickness_start + 1);
-        var border_thickness_string = text.substring(border_thickness_start + 1, border_thickness_end);
-
-        theBox.innerHTML = "<input type=\"text\" id=\"text\"  onchange=\"boxStylist(this);\"></input>
-                            <div style=\" border-color: black; border-width :"+ border_thickness_string +";\" ></div>" ;
-
+        outerbox.innerHTML = "<div style= \" width : 500px; height : 500 px;  border-width :"+ orderstring +";\" ></div>" ;
+                          }
+      else if (border_color.test(text) == true) {
+        outerbox.innerHTML = "<div style= \" width : 500px; height : 500 px; border-color :" + orderstring +";\" ></div>" ;
+      }
+      else if (background.test(text) == true) {
+        outerbox.innerHTML = "<div style= \" width : 500px; height : 500 px; background-color :" + orderstring +";\" ></div>" ;
+      }
+      else if (border_text.test(text) == true) {
+        outerbox.innerHTML = "<div style= \" width : 500px; height : 500 px; \"><h1>" + orderstring + "</h1></div>" ;
+      }
+      else if (border_style.test(text) == true) {
+        outerbox.innerHTML = "<div style= \" width : 500px; height : 500 px; border_style :" + orderstring +";\" ></div>" ;
       }
     }
   </script>
 </head>
-<body>
+<body style = "margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px;">
   <input type="text" id="text"  onchange="boxStylist(this);"></input>
-  <div style = "border-width : 5px; border_color : black"></div>
+  <div id = "outer" style = "position : absolute; top : 50%; width : 500px; height : 500 px; overflow : hidden; margin-top : -150px; margin-left : -100px">
+  </div>
 </body>
 </html>
